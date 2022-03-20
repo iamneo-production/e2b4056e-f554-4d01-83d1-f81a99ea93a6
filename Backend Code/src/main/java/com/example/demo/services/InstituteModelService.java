@@ -15,7 +15,7 @@ public interface InstituteModelService {
 		List<InstituteModel> ViewInstituteModelList();
 		
 		//Fetch Institute by Id
-		ResponseEntity<InstituteModel> ViewInstituteModelById(Long instituteId);
+		ResponseEntity<InstituteModel> ViewInstituteModelById(Long institutesId);
 		
 		//Update Institute
 		InstituteModel editInstituteModel(Long instituteId , InstituteModel instituteModel);

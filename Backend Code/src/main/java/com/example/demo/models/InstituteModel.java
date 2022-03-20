@@ -1,10 +1,14 @@
 package com.example.demo.models;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -26,6 +30,12 @@ public class InstituteModel {
 	private String mobile;
 	private String email;
 	private String img_url;
+	
+	@OneToMany(mappedBy = "institute" , cascade = {
+		CascadeType.ALL
+	})
+	List<CourseModel> courses;
+	
 	public InstituteModel() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -73,5 +83,12 @@ public class InstituteModel {
 
 	public void setImg_url(String img_url) {
 		this.img_url = img_url;
+	}
+	public List<CourseModel> getCourses() {
+		return courses;
+	}
+
+	public void setCourses(List<CourseModel> courses) {
+		this.courses = courses;
 	}
 }
