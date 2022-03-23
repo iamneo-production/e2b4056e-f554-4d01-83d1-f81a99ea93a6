@@ -76,6 +76,12 @@ public class AdminController {
 	}
 	
 	//@PreAuthorize("hasRole('ROLE_ADMIN')")
+	@GetMapping("/admin/view-course/{courseId}")
+	public ResponseEntity<CourseModel> viewCourseById(@PathVariable Long courseId){
+		return courseModelService.viewCourseById(courseId);
+	}
+	
+	//@PreAuthorize("hasRole('ROLE_ADMIN')")
 	@PostMapping("/admin/institutes/{institutesId}/create-course")
 	public ResponseEntity<CourseModel> addCourseModel(@PathVariable (value = "institutesId") Long institutesId, @RequestBody CourseModel course){
 		return courseModelService.addCourseModel(institutesId, course);

@@ -21,6 +21,9 @@ public interface CourseModelService {
 	//View all courses
 	public ResponseEntity<List<CourseModel>> viewAllCourses();
 	
+	//View course by id
+	public ResponseEntity<CourseModel> viewCourseById(Long courseId);
+	
 	//Edit Course
 	public ResponseEntity<CourseModel> editCourseModel(Long courseId , CourseModel course);
 	

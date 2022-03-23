@@ -26,6 +26,13 @@ public class CourseModelServiceImpl implements CourseModelService{
 		return new ResponseEntity<>(courses , HttpStatus.OK);
 	}
 	
+	//View course by id
+	public ResponseEntity<CourseModel> viewCourseById(Long courseId){
+		CourseModel course = courserepo.findById(courseId)
+		.orElseThrow(()-> new ResourceNotFoundException("No course found with id = " +courseId));
+		return new ResponseEntity<>(course,HttpStatus.OK);
+	}
+	
 	//Add Courses
 	public ResponseEntity<CourseModel> addCourseModel(Long institutesId, CourseModel course)
 	{
