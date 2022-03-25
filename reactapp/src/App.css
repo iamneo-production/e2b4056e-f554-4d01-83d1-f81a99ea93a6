@@ -1,38 +1,250 @@
-.App {
-  text-align: center;
+body {
+  background-image: url("./component/image/bg.jpeg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
 }
+/* ------------------Login and Registration Page -------------------------- */
+.container{
+  max-width: 440px;
+  padding: 0 20px;
+  margin: 170px auto;
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.wrapper{
+  width: 100%;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 4px 10px 1px rgba(0,0,0,0.1);
+  background-color: rgba(0, 0, 0, 0.5);
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.wrapper .title{
+  height: 90px;
+  border-radius: 5px 5px 0 0;
+  color: #fff;
+  font-size: 30px;
+  font-weight: 600;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.wrapper form{
+  padding: 30px 25px 25px 25px;
+}
+.wrapper form .row{
+  height: 45px;
+  margin-bottom: 15px;
+  position: relative;
+}
+.wrapper form .row input{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  padding-left: 60px;
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+form .row input:focus{
+  border-color: black;
+  box-shadow: inset 0px 0px 2px 2px rgba(26,188,156,0.25);
+}
+form .row input::placeholder{
+  color: #999;
+}
+.wrapper form .row i{
+  position: absolute;
+  width: 47px;
+  height: 100%;
+  color: #fff;
+  font-size: 18px;
+  background: black;
+  border: 1px solid black;
+  border-radius: 5px 0 0 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.wrapper form .button input{
+  color: black;
+  font-size: 20px;
+  font-weight: 500;
+  padding-left: 0px;
+  background: white;
+  border: 1px solid black;
+  cursor: pointer;
+}
+form .button input:hover{
+  background: black;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.wrapper form .signup-link{
+  text-align: center;
+  margin-top: 20px;
+  font-size: 17px;
+}
+.wrapper form .signup-link a{
+  color: white;
+  text-decoration: none;
+}
+form .signup-link a:hover{
+  text-decoration: underline;
+  color: #e74c3c;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* -------------------------------------------- */
+.container2 {
+  display: inline-block;
+  border-radius: 3%;
+  border: #020202;
+  background-color: #fff;
+  position: relative;
+  width: 35%;
+  margin-top: 4%;
+  margin-left: 33%;
+  padding: 3%;
 }
+.form-input {
+  height: 2rem;
+  width: 70%;
+}
+.submitButton {
+  width: max-content;
+  height: fit-content;
+}
+button {
+  border: 1px solid rgb(20, 19, 19);
+  border-radius: 7%;
+  font-size: 0.875;
+  word-wrap: break-word;
+  width: 100px;
+  max-width: 100%;
+  background-color: #3eda17;
+}
+p {
+  color: red;
+}
+p1 {
+  color: rgb(10, 10, 9);
+  text-align: center;
+}
+.form-message {
+  text-align: center;
+}
+.gap {
+  opacity: 0.8;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-flex;
+}
+
+input {
+  font-size: 1rem;
+  height: 2rem;
+  color: #070707;
+  background-color: white;
+  margin-bottom: 5%;
+  border: 1px solid #373a3a;
+  border-radius: 4px;
+}
+
+.form-group {
+  width: 50%;
+}
+::placeholder {
+  color: #010608;
+  font-family: Montserrat, serif;
+  font-size: 1.4vw;
+}
+.form-btn1 {
+  float: right;
+}
+
+textarea {
+  display: block;
+  width: 40rem;
+  height: 3rem;
+  font-size: 1rem;
+  background-color: white;
+  border-radius: 4px;
+}
+.form1 {
+  display: flex;
+  position: relative;
+}
+.form2 {
+  display: flex;
+}
+.form3 {
+  display: flex;
+}
+.form4 {
+  display: flex;
+}
+.form5 {
+  margin-top: 2%;
+  display: flex;
+}
+.container1 {
+  background: none;
+  position: absolute;
+  width: 70%;
+  height: 50%;
+  top: 25%;
+  left: 15%;
+  padding: 5%;
+} 
+
+
+/* -------------SearchBar------------------------------------------ */
+.searchbar{
+  margin-bottom: auto;
+  margin-top: auto;
+  height: 60px;
+  background-color: #353b48;
+  border-radius: 30px;
+  padding: 10px;
+  }
+
+  .search_input{
+  color: white;
+  border: 0;
+  outline: 0;
+  background: none;
+  width: 0;
+  caret-color:transparent;
+  line-height: 40px;
+  transition: width 0.4s linear;
+  }
+
+  .searchbar:hover > .search_input{
+  padding: 0 10px;
+  width: 450px;
+  caret-color:red;
+  transition: width 0.4s linear;
+  }
+
+  .searchbar:hover > .search_icon{
+  background: white;
+  color: #e74c3c;
+  }
+
+  .search_icon{
+  height: 40px;
+  width: 40px;
+  float: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color:white;
+  text-decoration:none;
+  }
+/* -------------------------------------------- */
