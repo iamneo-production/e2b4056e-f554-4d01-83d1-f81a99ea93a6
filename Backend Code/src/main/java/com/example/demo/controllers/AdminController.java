@@ -2,6 +2,9 @@ package com.example.demo.controllers;
 
 import java.util.List;
 
+import javax.persistence.FetchType;
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,9 +21,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.models.CourseModel;
 import com.example.demo.models.InstituteModel;
+import com.example.demo.models.StudentModel;
+import com.example.demo.payload.request.StudentRequest;
 import com.example.demo.services.CourseModelService;
 //import com.example.demo.repository.InstituteRepository;
 import com.example.demo.services.InstituteModelService;
+import com.example.demo.services.StudentService;
+import com.example.demo.services.UserServiceImpl;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
@@ -28,7 +35,9 @@ import com.example.demo.services.InstituteModelService;
 public class AdminController {
 	@Autowired private InstituteModelService instituteModelService;
 	@Autowired private CourseModelService courseModelService;
-	
+	@Autowired private UserServiceImpl userservice;
+	@Autowired private StudentService studentservice;
+
 	//@PreAuthorize("hasRole('ROLE_ADMIN')")
 	@PostMapping("/admin/addInstitutes")
 	public String addInstitute(@RequestBody InstituteModel instituteModel) {
@@ -97,5 +106,30 @@ public class AdminController {
 	@DeleteMapping("/admin/delete-course/{courseId}")
 	public ResponseEntity<HttpStatus> deleteCourseModel(@PathVariable(value = "courseId") Long courseId){
 		return courseModelService.deleteCourseModel(courseId);
+	}
+	
+	//@PreAuthorize("hasRole('ROLE_ADMIN')")
+	@GetMapping("/admin/viewStudents")
+	public ResponseEntity<List<StudentModel>> viewAllStudents(){
+		return studentservice.viewAllStudents();
+	}
+	
+	//@PreAuthorize("hasRole('ROLE_ADMIN')")
+	@DeleteMapping("/admin/deleteStudent/{Studentid}")
+	public ResponseEntity<HttpStatus> deleteStudentModel(@PathVariable Long Studentid){
+		return studentservice.deleteStudentModel(Studentid);
+	}
+	
+	
+	//User Side
+	
+	@PostMapping("/addAdmission")
+	public ResponseEntity<?> enroll(  @Valid @RequestBody  StudentRequest studentRequest){
+		return  userservice.enroll(studentRequest);
+	}
+	
+	@GetMapping("/viewenrolledcourses/{userid}")
+	public ResponseEntity<List<StudentModel>> displayenrollcourse(@PathVariable("userid") Integer userid) throws Exception{
+		return  userservice.viewenroll(userid);
 	}
 }
