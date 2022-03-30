@@ -37,6 +37,7 @@ public class CourseModel {
 	@JsonIgnore
 	private List<StudentModel> students = new ArrayList<>();
 
+
 	public CourseModel() {
 	}
 	public CourseModel(Long courseId, String courseName, String courseDuration, String courseDescription) {
@@ -45,9 +46,8 @@ public class CourseModel {
 		this.courseDuration = courseDuration;
 		this.courseDescription = courseDescription;
 	}
-	public CourseModel(Long courseid) {
-		this.courseId=courseid;
-		} 
+	
+
 	public Long getCourseId() {
 		return courseId;
 	}

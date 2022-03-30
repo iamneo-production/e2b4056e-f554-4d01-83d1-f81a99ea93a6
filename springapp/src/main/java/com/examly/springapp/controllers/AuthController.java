@@ -1,3 +1,4 @@
+
 package com.examly.springapp.controllers;
 
 import java.util.HashSet;
@@ -119,3 +120,4 @@ public class AuthController {
         return ResponseEntity.ok("User registered successfully!");
     }
 }
+

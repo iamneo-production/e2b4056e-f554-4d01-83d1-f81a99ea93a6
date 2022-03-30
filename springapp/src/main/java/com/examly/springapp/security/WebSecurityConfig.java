@@ -1,3 +1,4 @@
+
 package com.examly.springapp.security;
 
 import com.examly.springapp.security.jwt.AuthEntryPointJwt;
@@ -67,3 +68,4 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     }
 }
+

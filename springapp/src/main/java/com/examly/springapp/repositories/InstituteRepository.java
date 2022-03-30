@@ -1,3 +1,4 @@
+
 package com.examly.springapp.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -8,3 +9,5 @@ import com.examly.springapp.models.InstituteModel;
 public interface InstituteRepository extends JpaRepository<InstituteModel,Long> {
 
 }
+
+

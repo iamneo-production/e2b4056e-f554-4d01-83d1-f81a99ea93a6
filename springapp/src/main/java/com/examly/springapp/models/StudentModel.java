@@ -190,7 +190,10 @@ public class StudentModel {
 
 
 	public StudentModel(Long studentid, String studentname, String fathersname, String mothersname, String email,
+
 			String gender, String state, String nationality,String pincode, String phonenumber, String address ) {
+
+		
 		super();
 		this.studentid = studentid;
 		this.Studentname = studentname;
@@ -202,8 +205,8 @@ public class StudentModel {
 		this.nationality = nationality;
 		this.pincode = pincode;
 		this.phonenumber = phonenumber;
-		this.address = address;
-		
+		this.address = address;		
+
 	}
 	
 	public StudentModel() {

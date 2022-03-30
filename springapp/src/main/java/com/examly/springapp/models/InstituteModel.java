@@ -37,13 +37,10 @@ public class InstituteModel {
 	List<CourseModel> courses;
 	
 	public InstituteModel() {
-		//super();
+
+		
 	}
 	
-
-	
-
-
 	public InstituteModel(Long instituteId, String instituteName, String instituteDescription, String instituteAddress,
 			String mobile, String email, String img_url) {
 		this.instituteId = instituteId;
@@ -54,10 +51,6 @@ public class InstituteModel {
 		this.email = email;
 		this.img_url = img_url;
 	}
-
-
-
-
 
 	public Long getInstituteId() {
 		return instituteId;

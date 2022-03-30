@@ -1,3 +1,4 @@
+
 package com.examly.springapp.security.jwt;
 
 import org.slf4j.Logger;
@@ -20,4 +21,5 @@ public class AuthEntryPointJwt implements AuthenticationEntryPoint {
         response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Error: Unauthorized");
     }
 }
+
 

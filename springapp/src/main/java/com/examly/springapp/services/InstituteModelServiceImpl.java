@@ -2,19 +2,18 @@ package com.examly.springapp.services;
 
 import java.util.List;
 
+import com.examly.springapp.models.InstituteModel;
+import com.examly.springapp.repositories.InstituteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.examly.springapp.exceptions.ResourceNotFoundException;
-import com.examly.springapp.models.InstituteModel;
-import com.examly.springapp.repositories.InstituteRepository;
-
-
 
 @Service
 public class InstituteModelServiceImpl implements InstituteModelService{
+	
 	@Autowired
 	private InstituteRepository instituteRepository;
 	
@@ -64,3 +63,4 @@ public class InstituteModelServiceImpl implements InstituteModelService{
 		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 	}
 }
+
