@@ -18,6 +18,7 @@ public class SpringappApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringappApplication.class, args);
+
 	} 
 
 	@PostConstruct 
@@ -26,5 +27,7 @@ public class SpringappApplication {
 		Role admin = new Role(2,ERole.ROLE_ADMIN);
 		roleRepository.save(user);
 		roleRepository.save(admin);
+
+
 	}
 }

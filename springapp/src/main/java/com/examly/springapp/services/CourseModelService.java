@@ -6,9 +6,6 @@ import org.springframework.http.ResponseEntity;
 
 import java.util.List;
 
-//import org.springframework.web.bind.annotation.ResponseBody;
-//import com.examly.springapp.models.InstituteModel;
-
 public interface CourseModelService {
 	
 	//Add Course in an Institute
@@ -29,3 +26,4 @@ public interface CourseModelService {
 	//Delete Course
 	public ResponseEntity<HttpStatus> deleteCourseModel(Long courseId);
 }
+

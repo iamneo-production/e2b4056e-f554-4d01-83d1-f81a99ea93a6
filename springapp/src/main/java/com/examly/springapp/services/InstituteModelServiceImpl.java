@@ -63,3 +63,4 @@ public class InstituteModelServiceImpl implements InstituteModelService{
 		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 	}
 }
+

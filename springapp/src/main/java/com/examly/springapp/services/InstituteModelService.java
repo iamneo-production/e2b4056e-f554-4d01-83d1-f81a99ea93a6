@@ -22,3 +22,4 @@ public interface InstituteModelService {
 		//Delete Institute
 		ResponseEntity<HttpStatus> deleteInstituteModel(Long instituteId);
 }
+
