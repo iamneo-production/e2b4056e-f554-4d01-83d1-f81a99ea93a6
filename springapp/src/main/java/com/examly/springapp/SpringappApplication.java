@@ -1,25 +1,19 @@
 package com.examly.springapp;
-
 import javax.annotation.PostConstruct;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.beans.factory.annotation.Autowired;
 
+import com.examly.springapp.models.ERole;
 import com.examly.springapp.models.Role;
 import com.examly.springapp.repositories.RoleRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication; 
-import com.examly.springapp.models.ERole;
-
 @SpringBootApplication
-public class SpringappApplication { 
-
-	@Autowired
+public class SpringappApplication {
+	@Autowired 
 	RoleRepository roleRepository;
-	
-
 	public static void main(String[] args) {
 		SpringApplication.run(SpringappApplication.class, args);
-
-	} 
+	}
 
 	@PostConstruct 
 	public void addroles() {
@@ -27,7 +21,6 @@ public class SpringappApplication {
 		Role admin = new Role(2,ERole.ROLE_ADMIN);
 		roleRepository.save(user);
 		roleRepository.save(admin);
-
-
 	}
 }
+

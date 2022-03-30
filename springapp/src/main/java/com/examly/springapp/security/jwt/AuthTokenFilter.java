@@ -1,3 +1,4 @@
+
 package com.examly.springapp.security.jwt;
 
 import com.examly.springapp.services.UserDetailsServiceImpl;
@@ -50,3 +51,4 @@ public class AuthTokenFilter extends OncePerRequestFilter {
         return null;
     }
 }
+

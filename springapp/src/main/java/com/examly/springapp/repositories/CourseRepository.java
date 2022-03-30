@@ -1,3 +1,4 @@
+
 package com.examly.springapp.repositories;
 
 import com.examly.springapp.models.CourseModel;
@@ -13,3 +14,4 @@ public interface CourseRepository extends JpaRepository<CourseModel, Long>{
 	@Query(value ="select * from courses c  where c.institutes_id = ?1",nativeQuery = true)
 	List<CourseModel> findByInstitutesId(Long institutesId);
 }
+

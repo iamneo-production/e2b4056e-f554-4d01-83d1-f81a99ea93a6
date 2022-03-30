@@ -37,10 +37,21 @@ public class InstituteModel {
 	List<CourseModel> courses;
 	
 	public InstituteModel() {
-		super();
-		// TODO Auto-generated constructor stub
+
+		
 	}
 	
+	public InstituteModel(Long instituteId, String instituteName, String instituteDescription, String instituteAddress,
+			String mobile, String email, String img_url) {
+		this.instituteId = instituteId;
+		this.instituteName = instituteName;
+		this.instituteDescription = instituteDescription;
+		this.instituteAddress = instituteAddress;
+		this.mobile = mobile;
+		this.email = email;
+		this.img_url = img_url;
+	}
+
 	public Long getInstituteId() {
 		return instituteId;
 	}

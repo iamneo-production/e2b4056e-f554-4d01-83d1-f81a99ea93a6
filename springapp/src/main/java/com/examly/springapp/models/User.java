@@ -46,6 +46,9 @@ public class User {
 		this.password = password;
 		this.mobno = mobno;
 	}
+	// public User(Long integer) {
+	// 	this.id=integer;
+	// }
 	public Long getId() {
 		return id;
 	}

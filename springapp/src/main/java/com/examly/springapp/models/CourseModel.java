@@ -36,7 +36,18 @@ public class CourseModel {
 	@ManyToMany(mappedBy = "courses")
 	@JsonIgnore
 	private List<StudentModel> students = new ArrayList<>();
+
+
+	public CourseModel() {
+	}
+	public CourseModel(Long courseId, String courseName, String courseDuration, String courseDescription) {
+		this.courseId = courseId;
+		this.courseName = courseName;
+		this.courseDuration = courseDuration;
+		this.courseDescription = courseDescription;
+	}
 	
+
 	public Long getCourseId() {
 		return courseId;
 	}

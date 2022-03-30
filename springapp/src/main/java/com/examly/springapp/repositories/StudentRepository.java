@@ -1,12 +1,15 @@
+
 package com.examly.springapp.repositories;
 
-import com.examly.springapp.models.StudentModel;
+import java.util.List;
+
+import javax.transaction.Transactional;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import javax.transaction.Transactional;
-import java.util.List;
+import com.examly.springapp.models.StudentModel;
 
 public interface StudentRepository extends JpaRepository<StudentModel, Long>{
 	@Query(value ="select count(s.user_id) from student s  where s.user_id = ?1",nativeQuery = true)
@@ -22,3 +25,4 @@ public interface StudentRepository extends JpaRepository<StudentModel, Long>{
 	@Transactional
 	Long deleteByStudentid(Long Studentid);
 }
+

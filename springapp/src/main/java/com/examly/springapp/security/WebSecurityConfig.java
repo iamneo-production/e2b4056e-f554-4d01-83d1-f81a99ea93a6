@@ -1,7 +1,8 @@
+
 package com.examly.springapp.security;
 
-import com.examly.springapp.security.jwt.AuthTokenFilter;
 import com.examly.springapp.security.jwt.AuthEntryPointJwt;
+import com.examly.springapp.security.jwt.AuthTokenFilter;
 import com.examly.springapp.services.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -67,3 +68,4 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     }
 }
+
