@@ -1,12 +1,16 @@
 package com.examly.springapp.controllers;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-import java.util.stream.Collectors;
-
-import javax.validation.Valid;
-
+import com.examly.springapp.models.ERole;
+import com.examly.springapp.models.Role;
+import com.examly.springapp.models.User;
+import com.examly.springapp.payload.response.JwtResponse;
+import com.examly.springapp.payload.response.MessageResponse;
+import com.examly.springapp.payload.request.LoginRequest;
+import com.examly.springapp.payload.request.SignupRequest;
+import com.examly.springapp.repositories.RoleRepository;
+import com.examly.springapp.repositories.UserRepository;
+import com.examly.springapp.security.jwt.JwtUtils;
+import com.examly.springapp.services.UserDetailsImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -14,30 +18,19 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import com.examly.springapp.models.ERole;
-import com.examly.springapp.models.Role;
-import com.examly.springapp.models.User;
-import com.examly.springapp.payload.Response.JwtResponse;
-import com.examly.springapp.payload.Response.MessageResponse;
-import com.examly.springapp.payload.request.LoginRequest;
-import com.examly.springapp.payload.request.SignupRequest;
-import com.examly.springapp.repositories.RoleRepository;
-import com.examly.springapp.repositories.UserRepository;
-import com.examly.springapp.security.jwt.JwtUtils;
-import com.examly.springapp.services.UserDetailsImpl;
-
+import javax.validation.Valid;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
-	@Autowired
+    @Autowired
     AuthenticationManager authenticationManager;
     @Autowired
     UserRepository userRepository;
@@ -115,7 +108,7 @@ public class AuthController {
         }
         user.setRoles(roles);
         userRepository.save(user);
-        //System.out.println("Mobile number = " + user.getMobno());
         return ResponseEntity.ok("User registered successfully!");
     }
 }
+

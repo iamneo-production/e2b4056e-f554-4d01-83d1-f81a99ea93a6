@@ -2,6 +2,7 @@ package com.examly.springapp.services;
 
 import java.util.List;
 
+import com.examly.springapp.repositories.InstituteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,12 +11,10 @@ import org.springframework.stereotype.Service;
 import com.examly.springapp.exceptions.ResourceNotFoundException;
 import com.examly.springapp.models.CourseModel;
 import com.examly.springapp.repositories.CourseRepository;
-import com.examly.springapp.repositories.InstituteRepository;
-
-
 
 @Service
 public class CourseModelServiceImpl implements CourseModelService{
+	
 	@Autowired
 	private CourseRepository courserepo;
 	@Autowired
@@ -66,3 +65,4 @@ public class CourseModelServiceImpl implements CourseModelService{
 		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 	}
 }
+
