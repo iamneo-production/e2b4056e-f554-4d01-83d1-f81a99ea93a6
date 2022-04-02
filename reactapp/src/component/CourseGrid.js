@@ -10,24 +10,9 @@ function CourseGrid({ name,duration,timing,nos,description,userType }) {
             return (
                 <div className="" style={{marginTop:'1rem'}}>
                     <center>
-                    <Card 
-                        style={{
-                            width: '45rem'
-                            }}
-                    >
-
-                    <Card.Body
-                        style={{
-                            fontWeight:'600'
-                        }}
-                    >
-
-                    <Card.Title 
-                    style={{
-                        marginBottom:'1rem',fontWeight:'800'
-                        }}>{name}
-                    </Card.Title>
-
+                    <Card style={{ width: '45rem'}} >
+                    <Card.Body style={{fontWeight:'600'}}>
+                        <Card.Title style={{marginBottom:'1rem',fontWeight:'800'}}>{name}</Card.Title>
                         <div className="data" style={{display: 'flex', flexDirection: 'row', justifyContent:'center', alignItems:'flex-start',flex:'1', }}>
 
                             <div style={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent:'center',flex:'1'}}>
