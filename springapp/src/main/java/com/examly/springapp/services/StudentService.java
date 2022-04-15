@@ -12,6 +12,9 @@ public interface StudentService {
 	//View all students
 	public ResponseEntity<List<StudentModel>> viewAllStudents();
 	
+	//View student by studentId
+	public ResponseEntity<StudentModel> viewStudentById(Long Studentid);
+	
 	//Delete student
 	public ResponseEntity<HttpStatus> deleteStudentModel(Long Studentid);
 }
