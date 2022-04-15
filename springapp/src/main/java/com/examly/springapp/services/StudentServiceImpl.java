@@ -19,6 +19,12 @@ public class StudentServiceImpl implements StudentService{
 		return new ResponseEntity<>(list , HttpStatus.OK);
 	}
 	
+	public ResponseEntity<StudentModel> viewStudentById(Long Studentid){
+		StudentModel student = studentrepo.findById(Studentid)
+		.orElseThrow(()-> new ResourceNotFoundException("No student found with ID "+Studentid));
+		return new ResponseEntity<>(student,HttpStatus.OK);
+	}
+	
 	public ResponseEntity<HttpStatus> deleteStudentModel(Long Studentid){
 		studentrepo.deleteByStudentid(Studentid);
 		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
