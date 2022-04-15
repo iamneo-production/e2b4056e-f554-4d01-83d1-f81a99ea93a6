@@ -51,7 +51,7 @@ public class AdminController {
 		return instituteModelService.ViewInstituteModelList();
 	}
 
-	//@PreAuthorize("hasRole('ROLE_ADMIN')")
+	@PreAuthorize("hasRole('ROLE_ADMIN')")
 	@GetMapping("/admin/viewInstitutes/{instituteId}")
 	public ResponseEntity<InstituteModel> ViewInstituteModelById(@PathVariable long instituteId)
 	{
@@ -115,11 +115,16 @@ public class AdminController {
 	}
 	
 	@PreAuthorize("hasRole('ROLE_ADMIN')")
+	@GetMapping("/admin/viewStudent/{Studentid}")
+	public ResponseEntity<StudentModel> viewStudentById(@PathVariable Long Studentid){
+		return studentservice.viewStudentById(Studentid);
+	}
+	
+	@PreAuthorize("hasRole('ROLE_ADMIN')")
 	@DeleteMapping("/admin/deleteStudent/{Studentid}")
 	public ResponseEntity<HttpStatus> deleteStudentModel(@PathVariable Long Studentid){
 		return studentservice.deleteStudentModel(Studentid);
 	}
-	
 	
 	//User Side
 	
