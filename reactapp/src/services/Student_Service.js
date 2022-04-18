@@ -11,5 +11,11 @@ class Student_Service {
     delete(id) {
         return axios.delete(BASE_URL + "deleteStudent/" + id, { headers: Auth_Header() })
     }
+    getStudentbyId(id) {
+        return axios.get(BASE_URL + "viewStudent/" + id, {
+            headers: Auth_Header()
+        })
+
+    }
 }
 export default new Student_Service;
