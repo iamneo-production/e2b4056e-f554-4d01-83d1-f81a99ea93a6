@@ -2,6 +2,8 @@ package com.example.demo.repository;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -19,5 +21,6 @@ public interface StudentRepository extends JpaRepository<StudentModel, Long>{
 	@Query(value ="select * from Student s  where s.user_id = ?1",nativeQuery = true)
 	List<StudentModel> getEnrollCourse(@Param("userid")long userid);
 	
+	@Transactional
 	Long deleteByStudentid(Long Studentid);
 }

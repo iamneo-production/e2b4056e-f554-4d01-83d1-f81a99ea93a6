@@ -23,7 +23,7 @@ public class StudentModel {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long admissionid;
-	private Long Studentid;
+	private Long studentid;
 	private String Studentname;
 	private String fathersname;
 	private String mothersname;
@@ -60,12 +60,12 @@ public class StudentModel {
 
 
 	public Long getStudentid() {
-		return Studentid;
+		return studentid;
 	}
 
 
 	public void setStudentid(Long studentid) {
-		Studentid = studentid;
+		studentid = studentid;
 	}
 
 
@@ -192,8 +192,8 @@ public class StudentModel {
 	public StudentModel(Long studentid, String studentname, String fathersname, String mothersname, String email,
 			String gender, String state, String nationality, String phonenumber, String address ,String pincode) {
 		super();
-		Studentid = studentid;
-		Studentname = studentname;
+		this.studentid = studentid;
+		this.Studentname = studentname;
 		this.fathersname = fathersname;
 		this.mothersname = mothersname;
 		this.email = email;

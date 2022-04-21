@@ -115,19 +115,31 @@ public class AdminController {
 	}
 	
 	//@PreAuthorize("hasRole('ROLE_ADMIN')")
+	@GetMapping("/admin/viewStudent/{Studentid}")
+	public ResponseEntity<StudentModel> viewStudentById(@PathVariable Long Studentid){
+		return studentservice.viewStudentById(Studentid);
+	}
+	
+	//@PreAuthorize("hasRole('ROLE_ADMIN')")
 	@DeleteMapping("/admin/deleteStudent/{Studentid}")
 	public ResponseEntity<HttpStatus> deleteStudentModel(@PathVariable Long Studentid){
 		return studentservice.deleteStudentModel(Studentid);
 	}
 	
-	
+	//@PreAuthorize("hasRole('ROLE_ADMIN')")
+	@PutMapping("/admin/editStudent/{Studentid}")
+	public ResponseEntity<StudentModel> editStudentById(@PathVariable Long Studentid , @RequestBody StudentModel student){
+		return studentservice.editStudentById(Studentid, student);
+	}
 	//User Side
 	
+	@PreAuthorize("hasRole('ROLE_USER')")
 	@PostMapping("/addAdmission")
 	public ResponseEntity<?> enroll(  @Valid @RequestBody  StudentRequest studentRequest){
 		return  userservice.enroll(studentRequest);
 	}
 	
+	@PreAuthorize("hasRole('ROLE_USER')")
 	@GetMapping("/viewenrolledcourses/{userid}")
 	public ResponseEntity<List<StudentModel>> displayenrollcourse(@PathVariable("userid") Integer userid) throws Exception{
 		return  userservice.viewenroll(userid);
