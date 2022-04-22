@@ -1,4 +1,4 @@
-package com.examly.springapp.models;
+package com.example.demo.models;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +27,7 @@ public class StudentModel {
 	private String Studentname;
 	private String fathersname;
 	private String mothersname;
+	private String age;
 	private String email;
 	private String gender;
 	private String state;
@@ -96,6 +97,15 @@ public class StudentModel {
 
 	public void setMothersname(String mothersname) {
 		this.mothersname = mothersname;
+	}
+
+	public String getAge() {
+		return age;
+	}
+
+
+	public void setAge(String age) {
+		this.age = age;
 	}
 
 
@@ -189,25 +199,24 @@ public class StudentModel {
 	}
 
 
-	public StudentModel(Long studentid, String studentname, String fathersname, String mothersname, String email,
-
-			String gender, String state, String nationality,String pincode, String phonenumber, String address ) {
-
-		
+	public StudentModel(Long studentid, String studentname, String fathersname, String mothersname, String age ,String email,
+			String gender, String state, String nationality, String phonenumber, String address ,String pincode) {
 		super();
 		this.studentid = studentid;
 		this.Studentname = studentname;
 		this.fathersname = fathersname;
 		this.mothersname = mothersname;
+		this.age = age;
 		this.email = email;
 		this.gender = gender;
 		this.state = state;
 		this.nationality = nationality;
-		this.pincode = pincode;
 		this.phonenumber = phonenumber;
-		this.address = address;		
-
+		this.address = address;
+		this.pincode = pincode;
 	}
+	
+	
 	
 	public StudentModel() {
 		super();
