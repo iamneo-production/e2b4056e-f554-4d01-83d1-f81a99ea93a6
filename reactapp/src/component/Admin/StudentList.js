@@ -2,10 +2,12 @@ import React, { useEffect, useState } from 'react'
 import Student_Service from '../../services/Student_Service'
 import AdminNavbar from './AdminNavbar'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTrash } from '@fortawesome/free-solid-svg-icons'
+import { faTrash, faPenToSquare } from '@fortawesome/free-solid-svg-icons'
+import { useNavigate } from 'react-router-dom'
 const StudentList = () => {
 
     const [students, setStudents] = useState([])
+    const navigate = useNavigate();
 
     const listStudents = () => {
         Student_Service.getAllStudents()
@@ -55,7 +57,11 @@ const StudentList = () => {
                                         <td> {student.studentname}</td>
                                         <td> {student.email}</td>
                                         <td> {student.courses[0].courseName}</td>
-                                        <td> <button className='btn btn-danger' onClick={() => handleDelete(student.studentid)}><FontAwesomeIcon icon={faTrash} /></button></td>
+                                        <td>
+                                            <button className='btn btn-primary me-2' onClick={() => navigate(`/student-details/${student.admissionid}`)}>View</button>
+                                            <button className='btn btn-success me-2' onClick={() => navigate(`/edit-student/${student.admissionid}`)}><FontAwesomeIcon icon={faPenToSquare} /></button>
+                                            <button className='btn btn-danger' onClick={() => handleDelete(student.studentid)}><FontAwesomeIcon icon={faTrash} /></button>
+                                        </td>
                                     </tr>
                             )
                         }
