@@ -17,5 +17,11 @@ class Student_Service {
         })
 
     }
+    
+    editStudent(id, student) {
+        return axios.put(BASE_URL + "editStudent/" + id, student, {
+            headers: Auth_Header()
+        })
+    }
 }
 export default new Student_Service;
