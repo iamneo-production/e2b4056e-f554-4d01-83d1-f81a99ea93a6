@@ -24,5 +24,7 @@ public interface StudentRepository extends JpaRepository<StudentModel, Long>{
 	
 	@Transactional
 	Long deleteByStudentid(Long Studentid);
+	
+	List<StudentModel> findStudentByStudentid(Long Studentid);
 }
 
