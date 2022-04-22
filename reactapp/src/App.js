@@ -14,6 +14,7 @@ import EnrollingCourse from './component/User/EnrollingCourse';
 import EnrolledCourse from './component/User/EnrolledCourse';
 import StudentList from './component/Admin/StudentList';
 import StudentDetails from './component/Admin/StudentDetails';
+import EditStudent from './component/Admin/EditStudent';
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
               <Route path="/edit-course/:courseId" element={<AddCourse />}></Route>
               <Route path='/view-students' element={<StudentList />}></Route>
               <Route path='/student-details/:admissionid' element={<StudentDetails />}></Route>
+              <Route path='/edit-student/:admissionid' element={<EditStudent />}></Route>
             </Route>
           </Route>
 
