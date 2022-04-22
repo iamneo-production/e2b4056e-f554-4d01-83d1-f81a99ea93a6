@@ -121,6 +121,12 @@ public class AdminController {
 	}
 	
 	@PreAuthorize("hasRole('ROLE_ADMIN')")
+	@PutMapping("/admin/editStudent/{Studentid}")
+	public ResponseEntity<List<StudentModel>> editStudentById(@PathVariable Long Studentid , @RequestBody StudentModel student){
+		return studentservice.editStudentById(Studentid, student);
+	}
+	
+	@PreAuthorize("hasRole('ROLE_ADMIN')")
 	@DeleteMapping("/admin/deleteStudent/{Studentid}")
 	public ResponseEntity<HttpStatus> deleteStudentModel(@PathVariable Long Studentid){
 		return studentservice.deleteStudentModel(Studentid);
